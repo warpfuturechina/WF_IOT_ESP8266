@@ -204,3 +204,7 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 用于获取当前`AirKiss`配网API版本号
 
 `const char *wf_airkiss_version();`
+
+## QuickStart
+
+This is an [example link](https://github.com/warpfuturechina/WF_IOT_ESP8266/doc/QuickStart.md).
