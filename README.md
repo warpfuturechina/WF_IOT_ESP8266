@@ -1,4 +1,4 @@
-# 曲速智联IOT ESP8266 SDK说明文档
+# 曲速智能IOT ESP8266 SDK说明文档
 ---
 
 ## SDK API
