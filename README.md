@@ -205,6 +205,8 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 
 `const char *wf_airkiss_version();`
 
+---
+
 ## QuickStart
 
-This is an [example link](https://github.com/warpfuturechina/WF_IOT_ESP8266/doc/QuickStart.md).
+This is an [example link](/doc/QuickStart.md).
