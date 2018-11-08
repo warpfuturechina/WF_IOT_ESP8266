@@ -209,4 +209,4 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 
 ## QuickStart
 
-This is an [example link](/doc/QuickStart.md).
+使用 [示例链接](/doc/example.md).
