@@ -43,7 +43,13 @@ sdk初始成功后调用以下函数进行启动
 
 启动后需要停止sdk工作,调用以下函数暂停sdk
 
-`void wf_iot_stop();`
+`esp_err_t wf_iot_stop();`
+
+返回值说明
+
+|名称|数据类型|是否可空|说明|
+|:---|:---|:---|:---|
+|无|esp_err_t|是|暂停失败返回的错误信息|
 
 ### 4. 销毁sdk
 
@@ -55,7 +61,7 @@ sdk初始成功后调用以下函数进行启动
 
 sdk成功启动后，需要上报数据时调用以下函数进行数据上报，该函数可以上报一个或多个数据块
 
-`esp_err_t wf_iot_report(wf_tlv_t *data[], uint8_t count, wf_report_done_callback_t callback);`
+`esp_err_t wf_iot_report(wf_tlv_t *data[], uint8_t count);`
 
 参数说明
 
@@ -63,7 +69,6 @@ sdk成功启动后，需要上报数据时调用以下函数进行数据上报�
 |:---|:---|:---|:---|
 |data|wf_tlv_t *指针数组|否|数据块数组指针|
 |count|uint8_t|否|上报数据块个数|
-|callback|function|否|上报结果回调函数|
 
 返回值说明
 
@@ -75,14 +80,13 @@ sdk成功启动后，需要上报数据时调用以下函数进行数据上报�
 
 sdk成功启动后，需要上报数据时调用以下函数进行数据上报，该函数一次只能上报一个数据块
 
-`esp_err_t wf_iot_report_one(wf_tlv_t *data, wf_report_done_callback_t callback);`
+`esp_err_t wf_iot_report_one(wf_tlv_t *data);`
 
 参数说明
 
 |名称|数据类型|是否可空|说明|
 |:---|:---|:---|:---|
 |data|wf_tlv_t *|否|数据块指针|
-|callback|function|否|上报结果回调函数|
 
 返回值说明
 

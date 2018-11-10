@@ -75,21 +75,25 @@ typedef struct {
   uint8_t sntp_max_retry_count;
   uint32_t min_retry_delay_ms;
   uint32_t max_retry_delay_ms;
-  uint8_t send_queue_len;
+  uint32_t mqtt_timeout;
+  uint32_t mqtt_sendbuf_len;
+  uint32_t mqtt_recvbuf_len;
 } wf_iot_init_config_t;
 
 #define WF_IOT_INIT_DEFAULT_PARAM { \
-    .mqtt_task_stack_size = 4096, \
-    .mqtt_task_priority = 5, \
+    .mqtt_task_stack_size = 3072, \
+    .mqtt_task_priority = tskIDLE_PRIORITY + 2, \
     .other_task_stack_size = 4096, \
-    .other_task_priority = 5, \
+    .other_task_priority = tskIDLE_PRIORITY + 2, \
     .ota_task_stack_size = 4096, \
-    .ota_task_priority = 5, \
+    .ota_task_priority = tskIDLE_PRIORITY + 2, \
     .publish_qos = 2, \
     .sntp_max_retry_count = 10, \
     .min_retry_delay_ms = 500, \
     .max_retry_delay_ms = 3000, \
-    .send_queue_len = 30, \
+    .mqtt_timeout = 5 * 1000, \
+    .mqtt_sendbuf_len = 512, \
+    .mqtt_recvbuf_len = 512, \
   } \
 
 const char* wf_iot_get_version();
@@ -101,13 +105,11 @@ esp_err_t wf_iot_init(const wf_iot_init_config_t *init_config);
 
 esp_err_t wf_iot_start(const wf_iot_config_t *config);
 
-void wf_iot_stop();
+esp_err_t wf_iot_stop();
 
-void wf_iot_deinit();
+esp_err_t wf_iot_report(wf_tlv_t *data[], uint8_t count);
 
-esp_err_t wf_iot_report(wf_tlv_t *data[], uint8_t count, wf_report_done_callback_t callback);
-
-esp_err_t wf_iot_report_one(wf_tlv_t *data, wf_report_done_callback_t callback);
+esp_err_t wf_iot_report_one(wf_tlv_t *data);
 
 int16_t wf_tlv_get_int16(wf_valut_t *in_buf);
 uint16_t wf_tlv_get_uint16(wf_valut_t *in_buf);

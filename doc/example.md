@@ -24,6 +24,8 @@
 
 #define TAG "wf_example_main"
 
+#define WF_OUT_CTL_GPIO GPIO_NUM_4
+
 /* FreeRTOS event group to signal when we are connected & ready to make a
  * request */
 static EventGroupHandle_t wifi_event_group;
@@ -67,6 +69,8 @@ static void wf_airkiss_complete(wf_airkiss_result_t* result) {
   random_number = result->random_num;
 
   wifi_config_t wifi_config;
+  memset(&wifi_config, 0, sizeof(wifi_config_t));
+
   strcpy((char *)wifi_config.sta.ssid, result->ssid);
   strcpy((char *)wifi_config.sta.password, result->password);
   ESP_ERROR_CHECK(esp_wifi_stop());
@@ -280,8 +284,8 @@ void app_main() {
     .port = WF_BROKER_PORT,
     .product_id = WF_PROD_ID,
     .product_key = WF_PROD_KEY,
-    .ssid = (char *)&wifi_config.sta.ssid,
-    .pwd = (char *)&wifi_config.sta.password,
+    .ssid = (char *)wifi_config.sta.ssid,
+    .pwd = (char *)wifi_config.sta.password,
     .random = random_number,
     .tlv_callback = wf_tlv_callback,
     .timer_callback = NULL,
@@ -295,5 +299,13 @@ void app_main() {
   */
   wf_iot_start(&config);
 
+  int cnt = 0;
+  for (;;) {
+    ESP_LOGI(TAG, "Free heap size: %d", esp_get_free_heap_size());
+    vTaskDelay(pdMS_TO_TICKS(10000));
+    extern void esp_task_wdt_reset(void);
+    esp_task_wdt_reset();
+    cnt++;
+  }
 }
 ```
