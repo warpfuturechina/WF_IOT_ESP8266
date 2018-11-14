@@ -76,6 +76,7 @@ typedef struct {
   uint32_t min_retry_delay_ms;
   uint32_t max_retry_delay_ms;
   uint32_t mqtt_timeout;
+  uint32_t mqtt_keepalive_interval_s;
   uint32_t mqtt_sendbuf_len;
   uint32_t mqtt_recvbuf_len;
 } wf_iot_init_config_t;
@@ -92,6 +93,7 @@ typedef struct {
     .min_retry_delay_ms = 500, \
     .max_retry_delay_ms = 3000, \
     .mqtt_timeout = 5 * 1000, \
+    .mqtt_keepalive_interval_s = 20, \
     .mqtt_sendbuf_len = 512, \
     .mqtt_recvbuf_len = 512, \
   } \
