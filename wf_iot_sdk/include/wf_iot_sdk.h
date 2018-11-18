@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <esp_err.h>
-#include <freertos/event_groups.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -93,7 +92,7 @@ typedef struct {
     .min_retry_delay_ms = 500, \
     .max_retry_delay_ms = 3000, \
     .mqtt_timeout = 5 * 1000, \
-    .mqtt_keepalive_interval_s = 20, \
+    .mqtt_keepalive_interval_s = 10, \
     .mqtt_sendbuf_len = 512, \
     .mqtt_recvbuf_len = 512, \
   } \
