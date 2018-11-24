@@ -13,7 +13,6 @@ typedef struct {
   char *ssid;
   char *password;
   uint8_t random_num;
-  uint8_t phone_ip[4];
 } wf_airkiss_result_t;
 
 typedef struct {
