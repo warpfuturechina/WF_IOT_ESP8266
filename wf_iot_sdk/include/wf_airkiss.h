@@ -26,7 +26,7 @@ esp_err_t wf_airkiss_start(uint8_t timeout_s, wf_airkiss_callback_t callback);
 
 void wf_airkiss_stop();
 
-void wf_airkiss_send_ack();
+void wf_airkiss_send_ack(uint8_t random_num);
 
 const char *wf_airkiss_version();
 
