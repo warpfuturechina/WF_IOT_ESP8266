@@ -246,8 +246,8 @@ sdk成功启动后，可以调用以下函数开始进入`AP`配网模式，并�
 
 |名称|数据类型|是否可空|说明|
 |:---|:---|:---|:---|
-|ap_ssid_prefix|const char *|否|ssid名称|
-|ap_password|const char *|否|密码|
+|ap_ssid_prefix|const char *|否|Wi-Fi名称|
+|ap_password|const char *|否|Wi-Fi密码|
 |callback|wf_ap_callback_t|否|成功或失败回调|
 
 返回值说明
