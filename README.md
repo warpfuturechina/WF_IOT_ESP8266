@@ -220,9 +220,9 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 
 <h3 id="12">2.3、响应客户端配网请求并返回随机数</h3>
 
-收到配网成功的回调后，<strong>必须</strong>调用以下函数，将收到的<strong>随机数</strong>响应返回给客户端。
-收到配网成功的回调后，<strong>必须</strong>调用以下函数，将收到的<strong>随机数</strong>响应返回给客户端。
-收到配网成功的回调后，<strong>必须</strong>调用以下函数，将收到的<strong>随机数</strong>响应返回给客户端。
+收到配网成功的回调后，<strong>必须</strong>调用以下函数，将收到的<strong>随机数</strong>响应返回给客户端。<br>
+收到配网成功的回调后，<strong>必须</strong>调用以下函数，将收到的<strong>随机数</strong>响应返回给客户端。<br>
+收到配网成功的回调后，<strong>必须</strong>调用以下函数，将收到的<strong>随机数</strong>响应返回给客户端。<br>
 
 `wf_airkiss_send_ack();`
 
