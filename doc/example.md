@@ -67,6 +67,11 @@ static void wf_airkiss_complete(wf_airkiss_result_t* result) {
   ESP_LOGI(TAG, "Password %s", result->password);
   save_random_number(result->random_num);
   random_number = result->random_num;
+  
+  
+  /* require, send notification */
+  wf_airkiss_send_ack(random_number);
+  
 
   wifi_config_t wifi_config;
   memset(&wifi_config, 0, sizeof(wifi_config_t));

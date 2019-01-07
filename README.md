@@ -200,7 +200,7 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 
 |名称|数据类型|是否可空|说明|
 |:---|:---|:---|:---|
-|timeout_s|uint8_t|否|配网超时时间，多少秒之后配网不成功就自动关闭，单位为秒，取值为负数表示不超时|
+|timeout_s|uint32_t|否|配网超时时间，多少秒之后配网不成功就自动关闭，单位为秒，取值为负数表示不超时|
 |callback|wf_airkiss_callback_t|否|收到配网请求及配网参数的结果回调函数|
 
 返回值说明
@@ -217,7 +217,9 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 
 <h3 id="12">2.3、响应客户端配网请求并返回随机数</h3>
 
-收到客户端发送过来的配网请求后，调用以下函数响应客户端
+收到配网成功回调后， <strong>必须</strong> 调用以下函数，将回调结果中的 <strong>result->random_num</strong> 发送回去。<br>
+收到配网成功回调后， <strong>必须</strong> 调用以下函数，将回调结果中的 <strong>result->random_num</strong> 发送回去。<br>
+收到配网成功回调后， <strong>必须</strong> 调用以下函数，将回调结果中的 <strong>result->random_num</strong> 发送回去。<br>
 
 `wf_airkiss_send_ack();`
 
@@ -226,6 +228,45 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 用于获取当前`AirKiss`配网API版本号
 
 `wf_airkiss_version();`
+
+</br>
+
+---
+
+<h2 id="14">3、AP配网</h3>
+
+<h3 id="15">3.1、进入配网模式</h3>
+
+sdk成功启动后，可以调用以下函数开始进入`AP`配网模式，并等待客户端发起配网请求，收到配网请求及参数后执行回调函数
+
+`wf_ap_start(const char *ap_ssid_prefix, const char *ap_password, wf_ap_callback_t callback);`
+
+参数说明
+
+|名称|数据类型|是否可空|说明|
+|:---|:---|:---|:---|
+|ap_ssid_prefix|const char *|否|Wi-Fi名称|
+|ap_password|const char *|否|Wi-Fi密码|
+|callback|wf_ap_callback_t|否|成功或失败回调|
+
+返回值说明
+
+|名称|数据类型|是否可空|说明|
+|:---|:---|:---|:---|
+|无|esp_err_t|是|调用错误返回值|
+
+<h3 id="16">3.2、停止配网</h3>
+
+
+开启`AP`配网模式后，需要停止配网，调用以下函数
+
+`wf_ap_stop();`
+
+<h3 id="17">3.3、当前`AP`配网`API`版本号</h3>
+
+用于获取当前`AP`配网API版本号
+
+`wf_ap_version();`
 
 ---
 
