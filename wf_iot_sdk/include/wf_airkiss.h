@@ -22,7 +22,7 @@ typedef struct {
     void (*timeout)();
 } wf_airkiss_callback_t;
 
-esp_err_t wf_airkiss_start(uint8_t timeout_s, wf_airkiss_callback_t callback);
+esp_err_t wf_airkiss_start(int32_t timeout_s, wf_airkiss_callback_t callback);
 
 void wf_airkiss_stop();
 

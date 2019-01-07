@@ -14,17 +14,14 @@
  * [2.2、停止配网](#11)
  * [2.3、响应客户端配网请求并返回随机数](#12)
  * [2.4、当前`AirKiss`配网`API`版本号](#13)
-* [3、AP配网](#14)
- * [3.1、进入配网模式](#15)
- * [3.2、停止配网](#16)
- * [3.3、当前`AP`配网`API`版本号](#17)
-* [4、QuickStart](#18)
+* [3、QuickStart](#14)
 
 <br>
 
 <h2 id="1">1、SDK API</h3>
 
 <h3 id="2">1.1、初始化</h3>
+
 
 使用sdk前需要先调用以下函数进行初始化，初始化成功后才能继续其它操作
 
@@ -197,13 +194,13 @@ sdk成功启动后，需要上报数据时调用以下函数进行数据上报�
 
 sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式，并等待客户端发起配网请求，收到配网请求及参数后执行回调函数
 
-`wf_airkiss_start(uint8_t timeout_s, wf_airkiss_callback_t callback);`
+`wf_airkiss_start(int32_t timeout_s, wf_airkiss_callback_t callback);`
 
 参数说明
 
 |名称|数据类型|是否可空|说明|
 |:---|:---|:---|:---|
-|timeout_s|uint8_t|否|配网超时时间，多少秒之后配网不成功就自动关闭，单位为秒|
+|timeout_s|uint8_t|否|配网超时时间，多少秒之后配网不成功就自动关闭，单位为秒，取值为负数表示不超时|
 |callback|wf_airkiss_callback_t|否|收到配网请求及配网参数的结果回调函数|
 
 返回值说明
@@ -230,47 +227,8 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 
 `wf_airkiss_version();`
 
-</br>
-
 ---
 
-<h2 id="14">3、AP配网</h3>
-
-<h3 id="15">3.1、进入配网模式</h3>
-
-sdk成功启动后，可以调用以下函数开始进入`AP`配网模式，并等待客户端发起配网请求，收到配网请求及参数后执行回调函数
-
-`wf_ap_start(const char *ap_ssid_prefix, const char *ap_password, wf_ap_callback_t callback);`
-
-参数说明
-
-|名称|数据类型|是否可空|说明|
-|:---|:---|:---|:---|
-|ap_ssid_prefix|const char *|否|Wi-Fi名称|
-|ap_password|const char *|否|Wi-Fi密码|
-|callback|wf_ap_callback_t|否|成功或失败回调|
-
-返回值说明
-
-|名称|数据类型|是否可空|说明|
-|:---|:---|:---|:---|
-|无|esp_err_t|是|调用错误返回值|
-
-<h3 id="16">3.2、停止配网</h3>
-
-
-开启`AP`配网模式后，需要停止配网，调用以下函数
-
-`wf_ap_stop();`
-
-<h3 id="17">3.3、当前`AP`配网`API`版本号</h3>
-
-用于获取当前`P`配网API版本号
-
-`wf_ap_version();`
-
----
-
-<h2 id="18">3、QuickStart</h3>
+<h2 id="14">3、QuickStart</h3>
 
 使用 [示例链接](https://github.com/warpfuturechina/WF_IOT_ESP8266/blob/master/doc/example.md).
