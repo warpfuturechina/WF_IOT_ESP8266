@@ -13,8 +13,12 @@
  * [2.1、进入配网模式](#10)
  * [2.2、停止配网](#11)
  * [2.3、响应客户端配网请求并返回随机数](#12)
- * [2.4、当前`AirKiss`配网`API`版本号](#13)
-* [3、QuickStart](#14)
+ * [2.4、当前AirKiss配网API版本号](#13)
+* [3、AP配网](#14)
+  * [3.1、进入配网模式](#15)
+  * [3.2、停止配网](#16)
+  * [3.3、当前AP配网API版本号](#17)
+* [4、QuickStart](#18)
 
 <br>
 
@@ -272,6 +276,6 @@ sdk成功启动后，可以调用以下函数开始进入`AP`配网模式，并�
 
 ---
 
-<h2 id="14">3、QuickStart</h3>
+<h2 id="18">4、QuickStart</h3>
 
 使用 [示例链接](https://github.com/warpfuturechina/WF_IOT_ESP8266/blob/master/doc/example.md).
