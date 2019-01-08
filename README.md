@@ -237,7 +237,9 @@ sdk成功启动后，可以调用以下函数开始进入`AirKiss`配网模式�
 
 <h3 id="15">3.1、进入配网模式</h3>
 
-sdk成功启动后，可以调用以下函数开始进入`AP`配网模式，并等待客户端发起配网请求，收到配网请求及参数后执行回调函数
+sdk成功启动后，可以调用以下函数开始进入`AP`配网模式，并等待APP发起配网请求，收到配网请求及参数后执行回调函数
+
+约定AP热点名`ssid`为：`WarpFutureSoftAP`，密码`password`为：`00000000`
 
 `wf_ap_start(const char *ap_ssid_prefix, const char *ap_password, wf_ap_callback_t callback);`
 
