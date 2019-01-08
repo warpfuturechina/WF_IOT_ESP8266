@@ -50,6 +50,8 @@ typedef void (*wf_report_done_callback_t)(uint8_t result);
 typedef struct {
   char *address;
   uint16_t port;
+  uint16_t backup_port;
+
   char *product_id;
   char *product_key;
 
@@ -87,12 +89,12 @@ typedef struct {
     .other_task_priority = tskIDLE_PRIORITY + 2, \
     .ota_task_stack_size = 4096, \
     .ota_task_priority = tskIDLE_PRIORITY + 2, \
-    .publish_qos = 2, \
+    .publish_qos = 1, \
     .sntp_max_retry_count = 10, \
     .min_retry_delay_ms = 500, \
     .max_retry_delay_ms = 3000, \
-    .mqtt_timeout = 5 * 1000, \
-    .mqtt_keepalive_interval_s = 10, \
+    .mqtt_timeout = 15 * 1000, \
+    .mqtt_keepalive_interval_s = 15, \
     .mqtt_sendbuf_len = 512, \
     .mqtt_recvbuf_len = 512, \
   } \
