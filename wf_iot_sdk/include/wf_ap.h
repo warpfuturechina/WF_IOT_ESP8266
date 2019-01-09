@@ -24,7 +24,7 @@ typedef struct {
     void (*error)(wf_ap_error_t);
 } wf_ap_callback_t;
 
-esp_err_t wf_ap_start(const char *ap_ssid_prefix, const char *ap_password, wf_ap_callback_t callback);
+esp_err_t wf_ap_start(const char *ap_ssid, const char *ap_password, wf_ap_callback_t callback);
 
 void wf_ap_stop();
 
