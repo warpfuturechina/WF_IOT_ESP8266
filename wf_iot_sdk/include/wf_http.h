@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <time.h>
-#include <esp_err.h>
+#include "wf_err.h"
 
 #ifdef __cplusplus
 extern "C" {

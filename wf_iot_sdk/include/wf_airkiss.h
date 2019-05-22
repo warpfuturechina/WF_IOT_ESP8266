@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include <esp_err.h>
+#include "wf_err.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -22,7 +22,7 @@ typedef struct {
     void (*timeout)();
 } wf_airkiss_callback_t;
 
-esp_err_t wf_airkiss_start(int32_t timeout_s, wf_airkiss_callback_t callback);
+wf_err_t wf_airkiss_start(int32_t timeout_s, wf_airkiss_callback_t callback);
 
 void wf_airkiss_stop();
 

@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include <esp_err.h>
+#include "wf_err.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,7 +24,7 @@ typedef struct {
     void (*error)(wf_ap_error_t);
 } wf_ap_callback_t;
 
-esp_err_t wf_ap_start(const char *ap_ssid, const char *ap_password, wf_ap_callback_t callback);
+wf_err_t wf_ap_start(const char *ap_ssid, const char *ap_password, wf_ap_callback_t callback);
 
 void wf_ap_stop();
 
