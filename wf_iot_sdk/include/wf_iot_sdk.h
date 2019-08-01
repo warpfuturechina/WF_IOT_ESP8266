@@ -24,7 +24,7 @@ typedef char device_str_t[DEVICES_ID_STR_SIZE];
 typedef struct {
   wf_tag_t tag;
   wf_length_t len;
-  wf_valut_t value[0];
+  wf_valut_t value[1];
 } wf_tlv_t;
 #pragma pack(pop)
 
