@@ -3,10 +3,11 @@
 
 # 依赖
 
-[ESP8266_RTOS_SDK](http:///)
-[xtensa-lx106-elf](https://github.com/espressif/ESP8266_RTOS_SDK)
+* [ESP8266_RTOS_SDK](https://github.com/warpfuturechina/ESP8266_RTOS_SDK)
+* [xtensa-lx106-elf](https://github.com/espressif/ESP8266_RTOS_SDK)
 
-> xtensa-lx106-elf 根据开发环境系统 下载对应平台工具链 版本要求 >= v5.2.0，
+> ESP8266_RTOS_SDK：请下载 v3.x 分支SDK
+> xtensa-lx106-elf：根据开发环境系统 下载对应平台工具链 版本要求 >= v5.2.0，
 
 * [1、SDK API](#1)
   * [1.1、初始化](#2)
