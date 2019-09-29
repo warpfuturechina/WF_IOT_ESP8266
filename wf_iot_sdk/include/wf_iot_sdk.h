@@ -30,6 +30,7 @@ typedef struct {
 
 typedef void (*wf_tlv_callback_t)(wf_tlv_t *tlvs[], uint16_t count);
 typedef void (*wf_dispatch_tlv_callback_t)(device_id_t device_id,wf_tlv_t *tlvs[], uint16_t count);
+typedef void (*wf_disconnect_mqtt_callback_t)(void);
 
 typedef enum {
   WF_TIMER_EXECED,
@@ -80,6 +81,7 @@ typedef struct {
   wf_tlv_callback_t tlv_callback;
   wf_timer_callback_t timer_callback;
   wf_ota_callback_t ota_callback;
+  wf_disconnect_mqtt_callback_t disconnect_mqtt_callback;
 } wf_iot_config_t;
 
 typedef struct {
